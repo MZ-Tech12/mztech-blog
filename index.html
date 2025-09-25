@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZ TECH | Tech Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        .vanta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .comment-box {
+            transition: all 0.3s ease;
+        }
+        .comment-box:hover {
+            transform: scale(1.02);
+        }
+        .gmail-input {
+            border-radius: 24px;
+            box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Vanta.js Background -->
+    <div id="vanta-bg" class="vanta-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="cpu" class="text-blue-400"></i>
+                <h1 class="text-2xl font-bold">MZ TECH</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-blue-400 transition">Home</a>
+                <a href="#posts" class="hover:text-blue-400 transition">Posts</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-white pt-16">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Welcome to MZ TECH</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Exploring the latest in technology, coding, and innovation</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition transform hover:scale-105">
+                    Read Articles
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-6 py-3 rounded-full font-medium transition transform hover:scale-105">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#posts" class="animate-bounce">
+                <i data-feather="chevron-down" class="text-white w-10 h-10"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Posts -->
+    <section id="posts" class="py-20 bg-white bg-opacity-90">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Latest Tech Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="post-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/technology/640x360/1" alt="AI Technology" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">AI</span>
+                            <span class="text-gray-500 text-sm ml-2">May 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">The Future of Artificial Intelligence</h3>
+                        <p class="text-gray-600 mb-4">Exploring how AI is transforming industries and what to expect in the next decade.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Read More</a>
+                            <div class="flex space-x-2">
+                                <i data-feather="message-square" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-gray-400 text-sm">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="post-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/technology/640x360/2" alt="Web Development" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Web Dev</span>
+                            <span class="text-gray-500 text-sm ml-2">June 2, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Modern Web Development in 2023</h3>
+                        <p class="text-gray-600 mb-4">The latest frameworks, tools, and best practices for building modern web applications.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Read More</a>
+                            <div class="flex space-x-2">
+                                <i data-feather="message-square" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-gray-400 text-sm">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/technology/640x360/3" alt="Cybersecurity" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Security</span>
+                            <span class="text-gray-500 text-sm ml-2">June 10, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Essential Cybersecurity Practices</h3>
+                        <p class="text-gray-600 mb-4">Protecting your digital assets in an increasingly connected world.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Read More</a>
+                            <div class="flex space-x-2">
+                                <i data-feather="message-square" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-gray-400 text-sm">15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition">
+                    View All Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/technology/640x360/4" alt="About MZ TECH" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2 lg:pl-12" data-aos="fade-left">
+                    <h2 class="text-4xl font-bold mb-6">About MZ TECH</h2>
+                    <p class="text-gray-300 mb-6">MZ TECH is a premier technology blog dedicated to bringing you the latest news, insights, and tutorials in the world of technology. Our team of experts covers everything from software development to hardware innovations.</p>
+                    <p class="text-gray-300 mb-8">Founded in 2020, we've grown to become a trusted resource for tech enthusiasts, developers, and IT professionals worldwide.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="text-green-400 mr-2"></i>
+                            <span>Latest Tech News</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="text-green-400 mr-2"></i>
+                            <span>In-Depth Tutorials</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="text-green-400 mr-2"></i>
+                            <span>Expert Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">What Readers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Comment 1 -->
+                <div class="comment-box bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The AI article was incredibly insightful! I've shared it with my entire team. MZ TECH consistently delivers high-quality content."</p>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="comment-box bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As a web developer, I find the tutorials extremely practical. The step-by-step guides have helped me implement new techniques in my projects."</p>
+                </div>
+            </div>
+
+            <!-- Add Comment Form -->
+            <div class="mt-16 max-w-2xl mx-auto" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-6">Leave a Comment</h3>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <input type="email" placeholder="Your Email" class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <textarea placeholder="Your Comment" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition">
+                        Post Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-br from-blue-500 to-blue-700 text-white p-10">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i data-feather="mail" class="mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium">Email Us</h4>
+                                    <p class="text-blue-100">contact@mztech.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="map-pin" class="mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium">Our Location</h4>
+                                    <p class="text-blue-100">123 Tech Street, Silicon Valley, CA</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="phone" class="mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium">Call Us</h4>
+                                    <p class="text-blue-100">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h4 class="font-medium mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition">
+                                    <i data-feather="twitter"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition">
+                                    <i data-feather="facebook"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition">
+                                    <i data-feather="linkedin"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition">
+                                    <i data-feather="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <div class="relative gmail-input">
+                                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="relative gmail-input">
+                                <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-600 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-feather="cpu" class="text-blue-400"></i>
+                        <h3 class="text-xl font-bold">MZ TECH</h3>
+                    </div>
+                    <p class="text-gray-400">Bringing you the latest in technology news, reviews, and tutorials.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#posts" class="text-gray-400 hover:text-white transition">Articles</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Artificial Intelligence</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subscribe</h4>
+                    <p class="text-gray-400 mb-4">Get the latest articles delivered to your inbox.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button class="bg-blue-500 px-4 py-2 rounded-r-lg hover:bg-blue-600 transition">
+                            <i data-feather="send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 MZ TECH. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3a86ff,
+            backgroundColor: 0x111827,
+            size: 0.8
+        });
+
+        // Initialize AOS and Feather Icons
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            feather.replace();
+        });
+    </script>
+</body>
+</html>
