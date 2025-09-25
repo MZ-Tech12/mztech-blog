@@ -3,31 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MZ Tech Blog</title>
+  <title>MZ Tech Blog - Modern</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>MZ TECH BLOG</h1>
+    <h1 class="logo">MZ TECH BLOG</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="#" id="settingsBtn">⚙ Settings</a>
     </nav>
   </header>
+
+  <div id="settingsPanel" class="hidden">
+    <h2>Settings</h2>
+    <label>Theme Color:
+      <input type="color" id="themeColor" value="#222222">
+    </label>
+    <label>Font Size:
+      <input type="range" id="fontSize" min="14" max="24" value="16">
+    </label>
+    <button id="closeSettings">Close</button>
+  </div>
+
   <main>
-    <h2>Latest Posts</h2>
-    <article>
-      <h3>10 Facts About AI</h3>
-      <p>Discover 10 amazing facts about Artificial Intelligence in 2025...</p>
-      <a href="post1.html">Read More</a>
-    </article>
-    <article>
-      <h3>New Gadget in 2025</h3>
-      <p>Here is everything about the latest gadget revolution of 2025...</p>
-      <a href="post2.html">Read More</a>
-    </article>
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="blog-container">
+      <article class="card">
+        <h3>10 Facts About AI</h3>
+        <p>Discover 10 amazing facts about Artificial Intelligence in 2025, including its impact on industries, daily life, and the future of humanity...</p>
+        <a href="post1.html" class="btn">Read More</a>
+      </article>
+      <article class="card">
+        <h3>New Gadget in 2025</h3>
+        <p>The latest gadget revolution is here with futuristic design, ultra-fast processing power, and AI-powered features that will blow your mind...</p>
+        <a href="post2.html" class="btn">Read More</a>
+      </article>
+    </div>
   </main>
+
   <footer>
     <p>© 2025 MZ TECH. All rights reserved.</p>
   </footer>
